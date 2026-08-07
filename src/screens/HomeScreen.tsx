@@ -1,9 +1,16 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+
+import { ProfileHeader } from '../components/ProfileHeader';
 
 export function HomeScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Inicio</Text>
+      <ProfileHeader
+        initials="OM"
+        name="Oscar Marín"
+        professionalTitle="Ingeniero Civil y Desarrollador"
+        subtitle="Tecnología, ingeniería y desarrollo de soluciones digitales"
+      />
     </View>
   );
 }
@@ -11,12 +18,8 @@ export function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 24,
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: '600',
+    justifyContent: 'flex-start',
+    paddingHorizontal: 24,
+    paddingTop: 36,
   },
 });
