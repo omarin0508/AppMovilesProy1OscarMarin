@@ -1,6 +1,8 @@
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
+import { ProjectCard } from '../components/ProjectCard';
+import { projects } from '../data/projects';
 import type { ProjectStackParamList } from '../types/navigation';
 
 type ProjectsScreenProps = NativeStackScreenProps<
@@ -9,11 +11,13 @@ type ProjectsScreenProps = NativeStackScreenProps<
 >;
 
 export function ProjectsScreen({ navigation }: ProjectsScreenProps) {
+  const previewProject = projects[0];
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Proyectos</Text>
-      <Button
-        title="Ver detalle provisional"
+      <ProjectCard
+        project={previewProject}
         onPress={() => navigation.navigate('ProjectDetail')}
       />
     </View>
@@ -23,7 +27,6 @@ export function ProjectsScreen({ navigation }: ProjectsScreenProps) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
     justifyContent: 'center',
     gap: 16,
     padding: 24,
