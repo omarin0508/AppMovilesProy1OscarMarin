@@ -23,6 +23,7 @@ export function ProjectsScreen({ navigation }: ProjectsScreenProps) {
 
   return (
     <FlatList
+      style={styles.list}
       data={projects}
       renderItem={renderProject}
       keyExtractor={(item) => item.id}
@@ -45,31 +46,40 @@ export function ProjectsScreen({ navigation }: ProjectsScreenProps) {
 }
 
 const styles = StyleSheet.create({
+  list: {
+    flex: 1,
+    backgroundColor: '#F9FAFB',
+  },
   content: {
     paddingHorizontal: 24,
-    paddingTop: 36,
-    paddingBottom: 96,
+    paddingTop: 34,
+    paddingBottom: 120,
   },
   header: {
-    gap: 8,
-    marginBottom: 20,
+    gap: 10,
+    marginBottom: 24,
   },
   separator: {
-    height: 16,
+    height: 18,
   },
   title: {
     color: '#111827',
-    fontSize: 28,
+    fontSize: 30,
     fontWeight: '700',
   },
   subtitle: {
     color: '#4B5563',
     fontSize: 16,
-    lineHeight: 23,
+    lineHeight: 24,
   },
   emptyText: {
     color: '#6B7280',
+    borderWidth: 1,
+    borderColor: '#E5E7EB',
+    borderRadius: 8,
+    backgroundColor: '#FFFFFF',
     fontSize: 16,
     lineHeight: 24,
+    padding: 18,
   },
 });

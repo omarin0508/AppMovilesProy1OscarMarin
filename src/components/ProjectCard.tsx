@@ -19,7 +19,9 @@ export function ProjectCard({ project, onPress }: ProjectCardProps) {
       ]}
     >
       <View style={styles.header}>
-        <Text style={styles.category}>{project.category}</Text>
+        <View style={styles.categoryBadge}>
+          <Text style={styles.category}>{project.category}</Text>
+        </View>
         <Text style={styles.openIndicator}>Ver proyecto →</Text>
       </View>
 
@@ -41,14 +43,14 @@ const styles = StyleSheet.create({
   card: {
     width: '100%',
     borderWidth: 1,
-    borderColor: '#E5E7EB',
-    borderRadius: 12,
+    borderColor: '#DDE3EA',
+    borderRadius: 8,
     backgroundColor: '#FFFFFF',
-    padding: 18,
-    gap: 12,
+    padding: 20,
+    gap: 14,
   },
   cardPressed: {
-    opacity: 0.84,
+    opacity: 0.88,
   },
   header: {
     flexDirection: 'row',
@@ -56,26 +58,33 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     gap: 12,
   },
+  categoryBadge: {
+    borderRadius: 8,
+    backgroundColor: '#EAF2FF',
+    paddingHorizontal: 10,
+    paddingVertical: 6,
+  },
   category: {
     color: '#1D4ED8',
-    fontSize: 13,
+    fontSize: 12,
     fontWeight: '700',
   },
   openIndicator: {
-    color: '#6B7280',
+    color: '#4B5563',
     flexShrink: 0,
     fontSize: 13,
-    fontWeight: '600',
+    fontWeight: '700',
   },
   title: {
     color: '#111827',
-    fontSize: 20,
+    fontSize: 21,
     fontWeight: '700',
+    lineHeight: 28,
   },
   description: {
-    color: '#4B5563',
+    color: '#374151',
     fontSize: 15,
-    lineHeight: 22,
+    lineHeight: 23,
   },
   technologies: {
     flexDirection: 'row',
@@ -83,13 +92,13 @@ const styles = StyleSheet.create({
     gap: 8,
   },
   technologyBadge: {
-    borderRadius: 14,
-    backgroundColor: '#F3F7FF',
-    paddingHorizontal: 10,
+    borderRadius: 8,
+    backgroundColor: '#F3F4F6',
+    paddingHorizontal: 11,
     paddingVertical: 6,
   },
   technologyText: {
-    color: '#1F2937',
+    color: '#374151',
     fontSize: 13,
     fontWeight: '600',
   },
