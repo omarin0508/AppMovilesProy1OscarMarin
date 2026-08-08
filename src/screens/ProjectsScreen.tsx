@@ -1,8 +1,9 @@
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { StyleSheet, Text, View } from 'react-native';
+import { FlatList, StyleSheet, Text, View } from 'react-native';
 
 import { ProjectCard } from '../components/ProjectCard';
 import { projects } from '../data/projects';
+import type { Project } from '../types/project';
 import type { ProjectStackParamList } from '../types/navigation';
 
 type ProjectsScreenProps = NativeStackScreenProps<
@@ -11,28 +12,64 @@ type ProjectsScreenProps = NativeStackScreenProps<
 >;
 
 export function ProjectsScreen({ navigation }: ProjectsScreenProps) {
-  const previewProject = projects[0];
+  const renderProject = ({ item }: { item: Project }) => (
+    <ProjectCard
+      project={item}
+      onPress={() =>
+        navigation.navigate('ProjectDetail', { projectId: item.id })
+      }
+    />
+  );
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Proyectos</Text>
-      <ProjectCard
-        project={previewProject}
-        onPress={() => navigation.navigate('ProjectDetail')}
-      />
-    </View>
+    <FlatList
+      data={projects}
+      renderItem={renderProject}
+      keyExtractor={(item) => item.id}
+      contentContainerStyle={styles.content}
+      ItemSeparatorComponent={() => <View style={styles.separator} />}
+      ListHeaderComponent={
+        <View style={styles.header}>
+          <Text style={styles.title}>Proyectos</Text>
+          <Text style={styles.subtitle}>
+            Explora algunos proyectos profesionales y académicos.
+          </Text>
+        </View>
+      }
+      ListEmptyComponent={
+        <Text style={styles.emptyText}>No hay proyectos disponibles.</Text>
+      }
+      showsVerticalScrollIndicator={false}
+    />
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    gap: 16,
-    padding: 24,
+  content: {
+    paddingHorizontal: 24,
+    paddingTop: 36,
+    paddingBottom: 96,
+  },
+  header: {
+    gap: 8,
+    marginBottom: 20,
+  },
+  separator: {
+    height: 16,
   },
   title: {
-    fontSize: 24,
-    fontWeight: '600',
+    color: '#111827',
+    fontSize: 28,
+    fontWeight: '700',
+  },
+  subtitle: {
+    color: '#4B5563',
+    fontSize: 16,
+    lineHeight: 23,
+  },
+  emptyText: {
+    color: '#6B7280',
+    fontSize: 16,
+    lineHeight: 24,
   },
 });
