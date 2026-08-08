@@ -47,8 +47,8 @@ const styles = StyleSheet.create({
     borderColor: theme.colors.border,
     borderRadius: theme.borderRadius.sm,
     backgroundColor: theme.colors.surface,
-    padding: 20,
-    gap: 14,
+    padding: theme.spacing.lg + 2,
+    gap: theme.spacing.md,
   },
   cardPressed: {
     opacity: 0.88,
@@ -67,25 +67,27 @@ const styles = StyleSheet.create({
   },
   category: {
     color: theme.colors.primary,
-    fontSize: 12,
+    fontSize: theme.typography.caption.fontSize - 1,
     fontWeight: '700',
+    lineHeight: theme.typography.caption.lineHeight,
   },
   openIndicator: {
     color: theme.colors.textMuted,
     flexShrink: 0,
-    fontSize: 13,
+    fontSize: theme.typography.caption.fontSize,
     fontWeight: '700',
+    lineHeight: theme.typography.caption.lineHeight,
   },
   title: {
     color: theme.colors.text,
-    fontSize: 21,
+    fontSize: theme.typography.cardTitle.fontSize,
     fontWeight: '700',
-    lineHeight: 28,
+    lineHeight: theme.typography.cardTitle.lineHeight,
   },
   description: {
     color: theme.colors.textSecondary,
-    fontSize: 15,
-    lineHeight: 23,
+    fontSize: theme.typography.secondary.fontSize,
+    lineHeight: theme.typography.secondary.lineHeight,
   },
   technologies: {
     flexDirection: 'row',
@@ -100,7 +102,8 @@ const styles = StyleSheet.create({
   },
   technologyText: {
     color: theme.colors.textSecondary,
-    fontSize: 13,
+    fontSize: theme.typography.caption.fontSize,
     fontWeight: '600',
+    lineHeight: theme.typography.caption.lineHeight,
   },
 });

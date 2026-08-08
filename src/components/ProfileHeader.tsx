@@ -57,17 +57,19 @@ const styles = StyleSheet.create({
   },
   name: {
     color: theme.colors.text,
-    fontSize: 28,
+    fontSize: theme.typography.heroTitle.fontSize,
     fontWeight: '700',
+    lineHeight: theme.typography.heroTitle.lineHeight,
   },
   professionalTitle: {
     color: theme.colors.primary,
     fontSize: 17,
     fontWeight: '600',
+    lineHeight: 23,
   },
   subtitle: {
     color: theme.colors.textMuted,
-    fontSize: 15,
-    lineHeight: 21,
+    fontSize: theme.typography.secondary.fontSize,
+    lineHeight: theme.typography.secondary.lineHeight,
   },
 });

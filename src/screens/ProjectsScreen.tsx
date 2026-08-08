@@ -53,25 +53,26 @@ const styles = StyleSheet.create({
   },
   content: {
     paddingHorizontal: theme.spacing.xl,
-    paddingTop: 34,
+    paddingTop: theme.spacing.xxl + theme.spacing.xs,
     paddingBottom: 120,
   },
   header: {
-    gap: theme.spacing.md - 2,
+    gap: theme.spacing.md,
     marginBottom: theme.spacing.xl,
   },
   separator: {
-    height: 18,
+    height: theme.spacing.lg + 2,
   },
   title: {
     color: theme.colors.text,
-    fontSize: 30,
+    fontSize: theme.typography.screenTitle.fontSize,
     fontWeight: '700',
+    lineHeight: theme.typography.screenTitle.lineHeight,
   },
   subtitle: {
     color: theme.colors.textMuted,
-    fontSize: 16,
-    lineHeight: 24,
+    fontSize: theme.typography.body.fontSize,
+    lineHeight: theme.typography.body.lineHeight,
   },
   emptyText: {
     color: theme.colors.textMuted,
@@ -79,8 +80,8 @@ const styles = StyleSheet.create({
     borderColor: theme.colors.borderSoft,
     borderRadius: theme.borderRadius.sm,
     backgroundColor: theme.colors.surface,
-    fontSize: 16,
-    lineHeight: 24,
+    fontSize: theme.typography.body.fontSize,
+    lineHeight: theme.typography.body.lineHeight,
     padding: theme.spacing.lg + 2,
   },
 });

@@ -68,9 +68,9 @@ const styles = StyleSheet.create({
   },
   content: {
     flexGrow: 1,
-    gap: 26,
+    gap: theme.spacing.xl,
     paddingHorizontal: theme.spacing.xl,
-    paddingTop: 28,
+    paddingTop: theme.spacing.xl,
     paddingBottom: 120,
   },
   notFoundContent: {
@@ -86,13 +86,13 @@ const styles = StyleSheet.create({
     width: '100%',
     maxWidth: 640,
     alignSelf: 'center',
-    gap: 12,
+    gap: theme.spacing.md,
   },
   title: {
     color: theme.colors.text,
-    fontSize: 28,
+    fontSize: theme.typography.heroTitle.fontSize,
     fontWeight: '700',
-    lineHeight: 35,
+    lineHeight: theme.typography.heroTitle.lineHeight,
   },
   categoryBadge: {
     alignSelf: 'flex-start',
@@ -114,18 +114,19 @@ const styles = StyleSheet.create({
     borderColor: theme.colors.border,
     borderRadius: theme.borderRadius.sm,
     backgroundColor: theme.colors.surface,
-    gap: 12,
+    gap: theme.spacing.md,
     padding: theme.spacing.lg + 2,
   },
   sectionTitle: {
     color: theme.colors.text,
-    fontSize: 20,
+    fontSize: theme.typography.sectionTitle.fontSize,
     fontWeight: '700',
+    lineHeight: theme.typography.sectionTitle.lineHeight,
   },
   descriptionText: {
     color: theme.colors.textSecondary,
-    fontSize: 16,
-    lineHeight: 24,
+    fontSize: theme.typography.body.fontSize,
+    lineHeight: theme.typography.body.lineHeight,
   },
   technologies: {
     flexDirection: 'row',
@@ -140,7 +141,8 @@ const styles = StyleSheet.create({
   },
   technologyText: {
     color: theme.colors.textSecondary,
-    fontSize: 13,
+    fontSize: theme.typography.caption.fontSize,
     fontWeight: '600',
+    lineHeight: theme.typography.caption.lineHeight,
   },
 });

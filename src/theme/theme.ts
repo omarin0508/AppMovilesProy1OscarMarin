@@ -27,4 +27,34 @@ export const theme = {
     lg: 18,
     pill: 44,
   },
+  typography: {
+    screenTitle: {
+      fontSize: 30,
+      lineHeight: 36,
+    },
+    heroTitle: {
+      fontSize: 28,
+      lineHeight: 34,
+    },
+    sectionTitle: {
+      fontSize: 22,
+      lineHeight: 28,
+    },
+    cardTitle: {
+      fontSize: 21,
+      lineHeight: 28,
+    },
+    body: {
+      fontSize: 16,
+      lineHeight: 24,
+    },
+    secondary: {
+      fontSize: 15,
+      lineHeight: 22,
+    },
+    caption: {
+      fontSize: 13,
+      lineHeight: 18,
+    },
+  },
 };
