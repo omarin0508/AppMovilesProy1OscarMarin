@@ -13,6 +13,7 @@ export function ProjectCard({ project, onPress }: ProjectCardProps) {
     <Pressable
       accessibilityLabel={`Abrir proyecto ${project.title}`}
       accessibilityRole="button"
+      android_ripple={{ color: theme.colors.primarySoft }}
       onPress={onPress}
       style={({ pressed }) => [
         styles.card,

@@ -58,8 +58,9 @@ export function HomeScreen({ navigation }: HomeScreenProps) {
 
         <View style={styles.actionsSection}>
           <Pressable
-            accessibilityLabel="Ver mis proyectos"
+            accessibilityLabel="Abrir lista de proyectos"
             accessibilityRole="button"
+            android_ripple={{ color: theme.colors.primarySoft }}
             onPress={() =>
               navigation.navigate('ProjectsTab', { screen: 'ProjectsList' })
             }
@@ -73,8 +74,13 @@ export function HomeScreen({ navigation }: HomeScreenProps) {
           </Pressable>
 
           <Pressable
-            accessibilityLabel={availabilityButtonLabel}
+            accessibilityLabel={
+              isAvailabilityVisible
+                ? 'Ocultar disponibilidad profesional'
+                : 'Mostrar disponibilidad profesional'
+            }
             accessibilityRole="button"
+            android_ripple={{ color: theme.colors.primarySoft }}
             onPress={() =>
               setIsAvailabilityVisible((currentValue) => !currentValue)
             }
@@ -140,6 +146,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: theme.borderRadius.md,
+    minHeight: 48,
     paddingHorizontal: theme.spacing.lg + 2,
     paddingVertical: theme.spacing.md + 2,
   },
