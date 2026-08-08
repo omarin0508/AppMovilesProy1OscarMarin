@@ -67,13 +67,16 @@ const styles = StyleSheet.create({
   },
   content: {
     flexGrow: 1,
-    gap: 24,
+    gap: 26,
     paddingHorizontal: 24,
     paddingTop: 28,
-    paddingBottom: 112,
+    paddingBottom: 120,
   },
   notFoundContent: {
     flex: 1,
+    width: '100%',
+    maxWidth: 640,
+    alignSelf: 'center',
     justifyContent: 'center',
     gap: 12,
     padding: 24,
@@ -81,7 +84,8 @@ const styles = StyleSheet.create({
   header: {
     width: '100%',
     maxWidth: 640,
-    gap: 14,
+    alignSelf: 'center',
+    gap: 12,
   },
   title: {
     color: '#111827',
@@ -104,6 +108,7 @@ const styles = StyleSheet.create({
   section: {
     width: '100%',
     maxWidth: 640,
+    alignSelf: 'center',
     borderWidth: 1,
     borderColor: '#DDE3EA',
     borderRadius: 8,
@@ -124,7 +129,7 @@ const styles = StyleSheet.create({
   technologies: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    gap: 8,
+    gap: 9,
   },
   technologyBadge: {
     borderRadius: 8,
