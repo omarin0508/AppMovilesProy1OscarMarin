@@ -3,6 +3,7 @@ import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { projects } from '../data/projects';
+import { theme } from '../theme/theme';
 import type { ProjectStackParamList } from '../types/navigation';
 
 type ProjectDetailScreenProps = NativeStackScreenProps<
@@ -63,13 +64,13 @@ export function ProjectDetailScreen({ route }: ProjectDetailScreenProps) {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: '#F9FAFB',
+    backgroundColor: theme.colors.background,
   },
   content: {
     flexGrow: 1,
-    gap: 26,
-    paddingHorizontal: 24,
-    paddingTop: 28,
+    gap: theme.spacing.xl,
+    paddingHorizontal: theme.spacing.xl,
+    paddingTop: theme.spacing.xl,
     paddingBottom: 120,
   },
   notFoundContent: {
@@ -79,29 +80,29 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     justifyContent: 'center',
     gap: 12,
-    padding: 24,
+    padding: theme.spacing.xl,
   },
   header: {
     width: '100%',
     maxWidth: 640,
     alignSelf: 'center',
-    gap: 12,
+    gap: theme.spacing.md,
   },
   title: {
-    color: '#111827',
-    fontSize: 28,
+    color: theme.colors.text,
+    fontSize: theme.typography.heroTitle.fontSize,
     fontWeight: '700',
-    lineHeight: 35,
+    lineHeight: theme.typography.heroTitle.lineHeight,
   },
   categoryBadge: {
     alignSelf: 'flex-start',
-    borderRadius: 8,
-    backgroundColor: '#EAF2FF',
+    borderRadius: theme.borderRadius.sm,
+    backgroundColor: theme.colors.primarySoft,
     paddingHorizontal: 11,
     paddingVertical: 7,
   },
   category: {
-    color: '#1D4ED8',
+    color: theme.colors.primary,
     fontSize: 13,
     fontWeight: '700',
   },
@@ -110,21 +111,22 @@ const styles = StyleSheet.create({
     maxWidth: 640,
     alignSelf: 'center',
     borderWidth: 1,
-    borderColor: '#DDE3EA',
-    borderRadius: 8,
-    backgroundColor: '#FFFFFF',
-    gap: 12,
-    padding: 18,
+    borderColor: theme.colors.border,
+    borderRadius: theme.borderRadius.sm,
+    backgroundColor: theme.colors.surface,
+    gap: theme.spacing.md,
+    padding: theme.spacing.lg + 2,
   },
   sectionTitle: {
-    color: '#111827',
-    fontSize: 20,
+    color: theme.colors.text,
+    fontSize: theme.typography.sectionTitle.fontSize,
     fontWeight: '700',
+    lineHeight: theme.typography.sectionTitle.lineHeight,
   },
   descriptionText: {
-    color: '#374151',
-    fontSize: 16,
-    lineHeight: 24,
+    color: theme.colors.textSecondary,
+    fontSize: theme.typography.body.fontSize,
+    lineHeight: theme.typography.body.lineHeight,
   },
   technologies: {
     flexDirection: 'row',
@@ -132,14 +134,15 @@ const styles = StyleSheet.create({
     gap: 9,
   },
   technologyBadge: {
-    borderRadius: 8,
-    backgroundColor: '#F3F4F6',
+    borderRadius: theme.borderRadius.sm,
+    backgroundColor: theme.colors.chip,
     paddingHorizontal: 11,
     paddingVertical: 7,
   },
   technologyText: {
-    color: '#374151',
-    fontSize: 13,
+    color: theme.colors.textSecondary,
+    fontSize: theme.typography.caption.fontSize,
     fontWeight: '600',
+    lineHeight: theme.typography.caption.lineHeight,
   },
 });

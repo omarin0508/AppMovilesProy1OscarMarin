@@ -3,6 +3,7 @@ import { FlatList, StyleSheet, Text, View } from 'react-native';
 
 import { ProjectCard } from '../components/ProjectCard';
 import { projects } from '../data/projects';
+import { theme } from '../theme/theme';
 import type { Project } from '../types/project';
 import type { ProjectStackParamList } from '../types/navigation';
 
@@ -48,38 +49,39 @@ export function ProjectsScreen({ navigation }: ProjectsScreenProps) {
 const styles = StyleSheet.create({
   list: {
     flex: 1,
-    backgroundColor: '#F9FAFB',
+    backgroundColor: theme.colors.background,
   },
   content: {
-    paddingHorizontal: 24,
-    paddingTop: 34,
+    paddingHorizontal: theme.spacing.xl,
+    paddingTop: theme.spacing.xxl + theme.spacing.xs,
     paddingBottom: 120,
   },
   header: {
-    gap: 10,
-    marginBottom: 24,
+    gap: theme.spacing.md,
+    marginBottom: theme.spacing.xl,
   },
   separator: {
-    height: 18,
+    height: theme.spacing.lg + 2,
   },
   title: {
-    color: '#111827',
-    fontSize: 30,
+    color: theme.colors.text,
+    fontSize: theme.typography.screenTitle.fontSize,
     fontWeight: '700',
+    lineHeight: theme.typography.screenTitle.lineHeight,
   },
   subtitle: {
-    color: '#4B5563',
-    fontSize: 16,
-    lineHeight: 24,
+    color: theme.colors.textMuted,
+    fontSize: theme.typography.body.fontSize,
+    lineHeight: theme.typography.body.lineHeight,
   },
   emptyText: {
-    color: '#6B7280',
+    color: theme.colors.textMuted,
     borderWidth: 1,
-    borderColor: '#E5E7EB',
-    borderRadius: 8,
-    backgroundColor: '#FFFFFF',
-    fontSize: 16,
-    lineHeight: 24,
-    padding: 18,
+    borderColor: theme.colors.borderSoft,
+    borderRadius: theme.borderRadius.sm,
+    backgroundColor: theme.colors.surface,
+    fontSize: theme.typography.body.fontSize,
+    lineHeight: theme.typography.body.lineHeight,
+    padding: theme.spacing.lg + 2,
   },
 });

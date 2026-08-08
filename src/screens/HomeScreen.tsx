@@ -5,6 +5,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { ProfileHeader } from '../components/ProfileHeader';
 import { SkillChip } from '../components/SkillChip';
+import { theme } from '../theme/theme';
 import type { RootTabParamList } from '../types/navigation';
 
 const skills = [
@@ -57,8 +58,9 @@ export function HomeScreen({ navigation }: HomeScreenProps) {
 
         <View style={styles.actionsSection}>
           <Pressable
-            accessibilityLabel="Ver mis proyectos"
+            accessibilityLabel="Abrir lista de proyectos"
             accessibilityRole="button"
+            android_ripple={{ color: theme.colors.primarySoft }}
             onPress={() =>
               navigation.navigate('ProjectsTab', { screen: 'ProjectsList' })
             }
@@ -72,8 +74,13 @@ export function HomeScreen({ navigation }: HomeScreenProps) {
           </Pressable>
 
           <Pressable
-            accessibilityLabel={availabilityButtonLabel}
+            accessibilityLabel={
+              isAvailabilityVisible
+                ? 'Ocultar disponibilidad profesional'
+                : 'Mostrar disponibilidad profesional'
+            }
             accessibilityRole="button"
+            android_ripple={{ color: theme.colors.primarySoft }}
             onPress={() =>
               setIsAvailabilityVisible((currentValue) => !currentValue)
             }
@@ -104,84 +111,86 @@ export function HomeScreen({ navigation }: HomeScreenProps) {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: theme.colors.surface,
   },
   content: {
     flexGrow: 1,
     justifyContent: 'flex-start',
-    paddingHorizontal: 24,
-    paddingTop: 36,
-    paddingBottom: 96,
-    gap: 32,
+    paddingHorizontal: theme.spacing.xl,
+    paddingTop: theme.spacing.xxl + theme.spacing.xs,
+    paddingBottom: 104,
+    gap: theme.spacing.xxl,
   },
   aboutSection: {
     width: '100%',
     maxWidth: 560,
-    gap: 10,
+    gap: theme.spacing.md - 2,
   },
   skillsSection: {
     width: '100%',
     maxWidth: 560,
-    gap: 12,
+    gap: theme.spacing.md,
   },
   skillsList: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    gap: 10,
+    gap: theme.spacing.md - 2,
   },
   actionsSection: {
     width: '100%',
     maxWidth: 560,
-    gap: 12,
+    gap: theme.spacing.md,
   },
   button: {
     width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 10,
-    paddingHorizontal: 18,
-    paddingVertical: 14,
+    borderRadius: theme.borderRadius.md,
+    minHeight: 48,
+    paddingHorizontal: theme.spacing.lg + 2,
+    paddingVertical: theme.spacing.md + 2,
   },
   primaryButton: {
-    backgroundColor: '#1D4ED8',
+    backgroundColor: theme.colors.primary,
   },
   secondaryButton: {
     borderWidth: 1,
-    borderColor: '#1D4ED8',
-    backgroundColor: '#FFFFFF',
+    borderColor: theme.colors.primary,
+    backgroundColor: theme.colors.surface,
   },
   pressed: {
     opacity: 0.82,
   },
   primaryButtonText: {
-    color: '#FFFFFF',
-    fontSize: 16,
+    color: theme.colors.surface,
+    fontSize: theme.typography.body.fontSize,
     fontWeight: '700',
   },
   secondaryButtonText: {
-    color: '#1D4ED8',
-    fontSize: 16,
+    color: theme.colors.primary,
+    fontSize: theme.typography.body.fontSize,
     fontWeight: '700',
   },
   availabilityCard: {
-    borderRadius: 10,
-    backgroundColor: '#F3F7FF',
-    paddingHorizontal: 16,
-    paddingVertical: 14,
+    borderRadius: theme.borderRadius.md,
+    backgroundColor: theme.colors.accentSoft,
+    paddingHorizontal: theme.spacing.lg,
+    paddingVertical: theme.spacing.md + 2,
   },
   availabilityText: {
-    color: '#1F2937',
-    fontSize: 15,
-    lineHeight: 22,
+    color: theme.colors.textSecondary,
+    fontSize: theme.typography.secondary.fontSize,
+    lineHeight: theme.typography.secondary.lineHeight,
   },
   sectionTitle: {
-    color: '#111827',
-    fontSize: 22,
+    color: theme.colors.text,
+    fontSize: theme.typography.sectionTitle.fontSize,
     fontWeight: '700',
+    lineHeight: theme.typography.sectionTitle.lineHeight,
   },
   aboutText: {
-    color: '#374151',
-    fontSize: 16,
-    lineHeight: 24,
+    color: theme.colors.textSecondary,
+    fontSize: theme.typography.body.fontSize,
+    lineHeight: theme.typography.body.lineHeight,
   },
 });

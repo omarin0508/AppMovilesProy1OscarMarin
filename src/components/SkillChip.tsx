@@ -1,5 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native';
 
+import { theme } from '../theme/theme';
+
 type SkillChipProps = {
   label: string;
 };
@@ -14,14 +16,15 @@ export function SkillChip({ label }: SkillChipProps) {
 
 const styles = StyleSheet.create({
   container: {
-    borderRadius: 18,
-    backgroundColor: '#EAF2FF',
+    borderRadius: theme.borderRadius.lg,
+    backgroundColor: theme.colors.primarySoft,
     paddingHorizontal: 14,
-    paddingVertical: 8,
+    paddingVertical: theme.spacing.sm,
   },
   label: {
-    color: '#1D4ED8',
+    color: theme.colors.primary,
     fontSize: 14,
     fontWeight: '600',
+    lineHeight: 19,
   },
 });

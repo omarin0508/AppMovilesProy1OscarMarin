@@ -1,5 +1,6 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
+import { theme } from '../theme/theme';
 import type { Project } from '../types/project';
 
 type ProjectCardProps = {
@@ -12,6 +13,7 @@ export function ProjectCard({ project, onPress }: ProjectCardProps) {
     <Pressable
       accessibilityLabel={`Abrir proyecto ${project.title}`}
       accessibilityRole="button"
+      android_ripple={{ color: theme.colors.primarySoft }}
       onPress={onPress}
       style={({ pressed }) => [
         styles.card,
@@ -43,11 +45,11 @@ const styles = StyleSheet.create({
   card: {
     width: '100%',
     borderWidth: 1,
-    borderColor: '#DDE3EA',
-    borderRadius: 8,
-    backgroundColor: '#FFFFFF',
-    padding: 20,
-    gap: 14,
+    borderColor: theme.colors.border,
+    borderRadius: theme.borderRadius.sm,
+    backgroundColor: theme.colors.surface,
+    padding: theme.spacing.lg + 2,
+    gap: theme.spacing.md,
   },
   cardPressed: {
     opacity: 0.88,
@@ -56,50 +58,53 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    gap: 12,
+    gap: theme.spacing.md,
   },
   categoryBadge: {
-    borderRadius: 8,
-    backgroundColor: '#EAF2FF',
+    borderRadius: theme.borderRadius.sm,
+    backgroundColor: theme.colors.primarySoft,
     paddingHorizontal: 10,
     paddingVertical: 6,
   },
   category: {
-    color: '#1D4ED8',
-    fontSize: 12,
+    color: theme.colors.primary,
+    fontSize: theme.typography.caption.fontSize - 1,
     fontWeight: '700',
+    lineHeight: theme.typography.caption.lineHeight,
   },
   openIndicator: {
-    color: '#4B5563',
+    color: theme.colors.textMuted,
     flexShrink: 0,
-    fontSize: 13,
+    fontSize: theme.typography.caption.fontSize,
     fontWeight: '700',
+    lineHeight: theme.typography.caption.lineHeight,
   },
   title: {
-    color: '#111827',
-    fontSize: 21,
+    color: theme.colors.text,
+    fontSize: theme.typography.cardTitle.fontSize,
     fontWeight: '700',
-    lineHeight: 28,
+    lineHeight: theme.typography.cardTitle.lineHeight,
   },
   description: {
-    color: '#374151',
-    fontSize: 15,
-    lineHeight: 23,
+    color: theme.colors.textSecondary,
+    fontSize: theme.typography.secondary.fontSize,
+    lineHeight: theme.typography.secondary.lineHeight,
   },
   technologies: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    gap: 8,
+    gap: theme.spacing.sm,
   },
   technologyBadge: {
-    borderRadius: 8,
-    backgroundColor: '#F3F4F6',
+    borderRadius: theme.borderRadius.sm,
+    backgroundColor: theme.colors.chip,
     paddingHorizontal: 11,
     paddingVertical: 6,
   },
   technologyText: {
-    color: '#374151',
-    fontSize: 13,
+    color: theme.colors.textSecondary,
+    fontSize: theme.typography.caption.fontSize,
     fontWeight: '600',
+    lineHeight: theme.typography.caption.lineHeight,
   },
 });

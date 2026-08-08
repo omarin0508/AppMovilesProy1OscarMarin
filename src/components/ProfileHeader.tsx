@@ -1,5 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native';
 
+import { theme } from '../theme/theme';
+
 type ProfileHeaderProps = {
   initials: string;
   name: string;
@@ -33,39 +35,41 @@ const styles = StyleSheet.create({
     maxWidth: 560,
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 18,
+    gap: theme.spacing.lg + 2,
   },
   avatar: {
     width: 88,
     height: 88,
-    borderRadius: 44,
+    borderRadius: theme.borderRadius.pill,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#1D3557',
+    backgroundColor: theme.colors.primaryDark,
   },
   avatarText: {
-    color: '#FFFFFF',
+    color: theme.colors.surface,
     fontSize: 28,
     fontWeight: '700',
   },
   textContainer: {
     flex: 1,
     flexShrink: 1,
-    gap: 6,
+    gap: theme.spacing.xs,
   },
   name: {
-    color: '#111827',
-    fontSize: 28,
+    color: theme.colors.text,
+    fontSize: theme.typography.heroTitle.fontSize,
     fontWeight: '700',
+    lineHeight: theme.typography.heroTitle.lineHeight,
   },
   professionalTitle: {
-    color: '#1D4ED8',
+    color: theme.colors.primary,
     fontSize: 17,
     fontWeight: '600',
+    lineHeight: 23,
   },
   subtitle: {
-    color: '#4B5563',
-    fontSize: 15,
-    lineHeight: 21,
+    color: theme.colors.textMuted,
+    fontSize: theme.typography.secondary.fontSize,
+    lineHeight: theme.typography.secondary.lineHeight,
   },
 });
