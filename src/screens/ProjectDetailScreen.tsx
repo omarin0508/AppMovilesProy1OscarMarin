@@ -3,6 +3,7 @@ import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { projects } from '../data/projects';
+import { theme } from '../theme/theme';
 import type { ProjectStackParamList } from '../types/navigation';
 
 type ProjectDetailScreenProps = NativeStackScreenProps<
@@ -63,12 +64,12 @@ export function ProjectDetailScreen({ route }: ProjectDetailScreenProps) {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: '#F9FAFB',
+    backgroundColor: theme.colors.background,
   },
   content: {
     flexGrow: 1,
     gap: 26,
-    paddingHorizontal: 24,
+    paddingHorizontal: theme.spacing.xl,
     paddingTop: 28,
     paddingBottom: 120,
   },
@@ -79,7 +80,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     justifyContent: 'center',
     gap: 12,
-    padding: 24,
+    padding: theme.spacing.xl,
   },
   header: {
     width: '100%',
@@ -88,20 +89,20 @@ const styles = StyleSheet.create({
     gap: 12,
   },
   title: {
-    color: '#111827',
+    color: theme.colors.text,
     fontSize: 28,
     fontWeight: '700',
     lineHeight: 35,
   },
   categoryBadge: {
     alignSelf: 'flex-start',
-    borderRadius: 8,
-    backgroundColor: '#EAF2FF',
+    borderRadius: theme.borderRadius.sm,
+    backgroundColor: theme.colors.primarySoft,
     paddingHorizontal: 11,
     paddingVertical: 7,
   },
   category: {
-    color: '#1D4ED8',
+    color: theme.colors.primary,
     fontSize: 13,
     fontWeight: '700',
   },
@@ -110,19 +111,19 @@ const styles = StyleSheet.create({
     maxWidth: 640,
     alignSelf: 'center',
     borderWidth: 1,
-    borderColor: '#DDE3EA',
-    borderRadius: 8,
-    backgroundColor: '#FFFFFF',
+    borderColor: theme.colors.border,
+    borderRadius: theme.borderRadius.sm,
+    backgroundColor: theme.colors.surface,
     gap: 12,
-    padding: 18,
+    padding: theme.spacing.lg + 2,
   },
   sectionTitle: {
-    color: '#111827',
+    color: theme.colors.text,
     fontSize: 20,
     fontWeight: '700',
   },
   descriptionText: {
-    color: '#374151',
+    color: theme.colors.textSecondary,
     fontSize: 16,
     lineHeight: 24,
   },
@@ -132,13 +133,13 @@ const styles = StyleSheet.create({
     gap: 9,
   },
   technologyBadge: {
-    borderRadius: 8,
-    backgroundColor: '#F3F4F6',
+    borderRadius: theme.borderRadius.sm,
+    backgroundColor: theme.colors.chip,
     paddingHorizontal: 11,
     paddingVertical: 7,
   },
   technologyText: {
-    color: '#374151',
+    color: theme.colors.textSecondary,
     fontSize: 13,
     fontWeight: '600',
   },

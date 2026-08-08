@@ -1,5 +1,6 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
+import { theme } from '../theme/theme';
 import type { Project } from '../types/project';
 
 type ProjectCardProps = {
@@ -43,9 +44,9 @@ const styles = StyleSheet.create({
   card: {
     width: '100%',
     borderWidth: 1,
-    borderColor: '#DDE3EA',
-    borderRadius: 8,
-    backgroundColor: '#FFFFFF',
+    borderColor: theme.colors.border,
+    borderRadius: theme.borderRadius.sm,
+    backgroundColor: theme.colors.surface,
     padding: 20,
     gap: 14,
   },
@@ -56,49 +57,49 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    gap: 12,
+    gap: theme.spacing.md,
   },
   categoryBadge: {
-    borderRadius: 8,
-    backgroundColor: '#EAF2FF',
+    borderRadius: theme.borderRadius.sm,
+    backgroundColor: theme.colors.primarySoft,
     paddingHorizontal: 10,
     paddingVertical: 6,
   },
   category: {
-    color: '#1D4ED8',
+    color: theme.colors.primary,
     fontSize: 12,
     fontWeight: '700',
   },
   openIndicator: {
-    color: '#4B5563',
+    color: theme.colors.textMuted,
     flexShrink: 0,
     fontSize: 13,
     fontWeight: '700',
   },
   title: {
-    color: '#111827',
+    color: theme.colors.text,
     fontSize: 21,
     fontWeight: '700',
     lineHeight: 28,
   },
   description: {
-    color: '#374151',
+    color: theme.colors.textSecondary,
     fontSize: 15,
     lineHeight: 23,
   },
   technologies: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    gap: 8,
+    gap: theme.spacing.sm,
   },
   technologyBadge: {
-    borderRadius: 8,
-    backgroundColor: '#F3F4F6',
+    borderRadius: theme.borderRadius.sm,
+    backgroundColor: theme.colors.chip,
     paddingHorizontal: 11,
     paddingVertical: 6,
   },
   technologyText: {
-    color: '#374151',
+    color: theme.colors.textSecondary,
     fontSize: 13,
     fontWeight: '600',
   },

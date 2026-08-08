@@ -5,6 +5,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { ProfileHeader } from '../components/ProfileHeader';
 import { SkillChip } from '../components/SkillChip';
+import { theme } from '../theme/theme';
 import type { RootTabParamList } from '../types/navigation';
 
 const skills = [
@@ -104,83 +105,83 @@ export function HomeScreen({ navigation }: HomeScreenProps) {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: theme.colors.surface,
   },
   content: {
     flexGrow: 1,
     justifyContent: 'flex-start',
-    paddingHorizontal: 24,
+    paddingHorizontal: theme.spacing.xl,
     paddingTop: 36,
     paddingBottom: 96,
-    gap: 32,
+    gap: theme.spacing.xxl,
   },
   aboutSection: {
     width: '100%',
     maxWidth: 560,
-    gap: 10,
+    gap: theme.spacing.md - 2,
   },
   skillsSection: {
     width: '100%',
     maxWidth: 560,
-    gap: 12,
+    gap: theme.spacing.md,
   },
   skillsList: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    gap: 10,
+    gap: theme.spacing.md - 2,
   },
   actionsSection: {
     width: '100%',
     maxWidth: 560,
-    gap: 12,
+    gap: theme.spacing.md,
   },
   button: {
     width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 10,
+    borderRadius: theme.borderRadius.md,
     paddingHorizontal: 18,
     paddingVertical: 14,
   },
   primaryButton: {
-    backgroundColor: '#1D4ED8',
+    backgroundColor: theme.colors.primary,
   },
   secondaryButton: {
     borderWidth: 1,
-    borderColor: '#1D4ED8',
-    backgroundColor: '#FFFFFF',
+    borderColor: theme.colors.primary,
+    backgroundColor: theme.colors.surface,
   },
   pressed: {
     opacity: 0.82,
   },
   primaryButtonText: {
-    color: '#FFFFFF',
+    color: theme.colors.surface,
     fontSize: 16,
     fontWeight: '700',
   },
   secondaryButtonText: {
-    color: '#1D4ED8',
+    color: theme.colors.primary,
     fontSize: 16,
     fontWeight: '700',
   },
   availabilityCard: {
-    borderRadius: 10,
-    backgroundColor: '#F3F7FF',
-    paddingHorizontal: 16,
+    borderRadius: theme.borderRadius.md,
+    backgroundColor: theme.colors.accentSoft,
+    paddingHorizontal: theme.spacing.lg,
     paddingVertical: 14,
   },
   availabilityText: {
-    color: '#1F2937',
+    color: theme.colors.textSecondary,
     fontSize: 15,
     lineHeight: 22,
   },
   sectionTitle: {
-    color: '#111827',
+    color: theme.colors.text,
     fontSize: 22,
     fontWeight: '700',
   },
   aboutText: {
-    color: '#374151',
+    color: theme.colors.textSecondary,
     fontSize: 16,
     lineHeight: 24,
   },
